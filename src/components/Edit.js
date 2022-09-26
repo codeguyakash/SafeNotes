@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import DashboardNav from "./DashboardNav";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import "./CreateNotes.css"
 
 const Edit = () => {
   const [updateNote, setUpdateNote] = useState([]);
@@ -41,12 +42,12 @@ const Edit = () => {
   return (
     <>
       <DashboardNav />
-      <div className="container">
+      <div className="create-container">
         <form onSubmit={UpdateNote}>
-          <h1 className="update-heading ">Update Note</h1>
+          <h1 className="create-form-heading ">Update Note</h1>
           <div className="title-div">
             <input
-            className="InputField"
+            className="title-inputfield"
               type="text"
               ref={newtitleRef}
               placeholder="Title"
@@ -54,9 +55,9 @@ const Edit = () => {
               defaultValue={updateNote.title}
             ></input>
           </div>
-          <div className="description-div">
+          <div className="">
             <textarea
-              className="DescriptionField"
+              className="description-inputfield"
               type="text"
               ref={newdescriptionRef}
               placeholder="Description"
@@ -65,7 +66,7 @@ const Edit = () => {
             ></textarea>
           </div>
           <div>
-            <button className="button update-button" type="submit">
+            <button className="create-button" type="submit">
               Update
             </button>
           </div>

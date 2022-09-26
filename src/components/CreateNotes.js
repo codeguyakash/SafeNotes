@@ -30,9 +30,9 @@ const CreateNotes = () => {
       <DashboardNav />
       <div className="create-container">
         <form onSubmit={CreateNote}>
-          <h2 className="">Create Note</h2>
+          <h2 className="create-form-heading">Create Note</h2>
           <div className="">
-            <input className=""
+            <input className="title-inputfield"
               type="text"
               ref={titleRef}
               placeholder="Title"
@@ -41,7 +41,7 @@ const CreateNotes = () => {
           </div>
           <div className="">
             <textarea
-              className=""
+              className="description-inputfield"
               type="text"
               ref={descriptionRef}
               placeholder="Description"

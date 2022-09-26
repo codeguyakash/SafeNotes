@@ -1,10 +1,43 @@
-.description-field {
-  font-size: 14px;
-  width: 245px;
-  max-height: 208px;
-  min-height: 208px;
+.create-container {
+  background-color: white;
+  border-radius: 5px;
+  width: 50%;
+  height: 500px;
+  margin: 50px auto;
+  padding: 50px 0px;
+}
+.create-form-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+.title-inputfield {
+  font-size: 15px;
+  padding: 10px 10px;
+  min-width: 320px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  border: 2px solid #dfdfdf;
+}
+.description-inputfield {
+  font-size: 15px;
+  font-weight: 600;
+  min-width: 320px;
+  min-height: 200px;
   padding: 10px;
   border-radius: 5px;
   border: 2px solid #dfdfdf;
   margin-bottom: 10px;
+}
+.create-button{
+  font-size: 15px;
+  font-weight: 600;
+  min-width: 320px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #dfdfdf;
+  margin-bottom: 10px;
+  background-color: green;
+  color: white;
 }
