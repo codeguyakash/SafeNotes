@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.model {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  z-index: 10;
+  background-color: white;
+  width: 400px;
+  max-width: 60%;
+  display: none;
+  box-shadow: 0 2px 50px 5px rgba(73, 73, 73, 0.25);
+}
+.activeModel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  z-index: 10;
+  background-color: white;
+  width: 600px;
+  max-width: 60%;
+}
+.model-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.model-header .title {
+  font-size: 30px;
+  font-weight: bold;
+}
+.model-header .close-button {
+  border: none;
+  margin-top: -5px;
+  background: none;
+  font-size: 25px;
+  /* font-weight: bold; */
+  cursor: pointer;
+  color: rgb(134, 134, 134);
+}
+.model-hr {
+  margin: 5px auto;
+  width: 93%;
+  height: 1px;
+  border-width: 0;
+  background-color:  rgb(192, 192, 192);
+}
+
+.model-body {
+  padding: 10px 20px 20px 20px; 
+  text-align: justify;
+}
+#overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+  position: fixed;
+}
+
+.btndiv-hide{
+  margin: 10px 20px;
+  display: none;
+  align-self: center;
+  justify-content: flex-end;
+
+}
+.btndiv{
+  margin: 10px 20px;
+  display: flex;
+  align-self: center;
+  justify-content: flex-end;
+
+}
+.closeBtn{
+  padding: 8px 20px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: #0096FF;
+}
+
+

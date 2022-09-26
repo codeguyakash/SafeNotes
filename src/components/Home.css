@@ -1,0 +1,81 @@
+.home-container {
+  /* border: 2px solid; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 20px;
+  gap: 50px;
+}
+
+.items {
+  width: 450px;
+  height: 300px;
+  border-radius: 10px;
+  padding:30px 0px ;
+  text-align: center;
+}
+.item1 {
+  border: 2px solid #f9c94a;
+  background: #fdf0cc;
+  color:#f9c94a;
+}
+.item2 {
+  border: 2px solid #4a96ff;
+  background: #cce1ff;
+  color:#4a96ff;
+}
+.item3 {
+  border: 2px solid #6bad63;
+  background: #cee4cc;
+  color: #6bad63;
+}
+.item4 {
+  border: 2px solid #F94892;
+  background: #f3a1c3;
+  color: #F94892;
+}
+
+
+/* For Tablet  */
+
+@media screen and (max-width:1023px) {
+  .home-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
+    padding-top: 20px;
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+  }
+  .items {
+    background-color: white;
+    width: 420px;
+    height: 300px;
+    text-align: center;
+    padding:30px 0px ;
+    box-shadow: 10px 10px 40px 5px rgb(230, 230, 230);
+  }
+}
+
+
+/* For Mobile Phone  */
+@media screen and (max-width: 768px) {
+  .home-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    padding-top: 20px;
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+  }
+  .items {
+    background-color: white;
+    width: 360px;
+    height: 280px;
+    text-align: center;
+    padding:30px 0px ;
+    box-shadow: 10px 10px 40px 5px rgb(230, 230, 230);
+  }
+}

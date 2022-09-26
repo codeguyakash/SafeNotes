@@ -1,0 +1,17 @@
+.greet-user {
+  padding: 15px 0px;
+  border: 2px solid #4a96ff;
+  background: #cce1ff;
+  margin: 10px 20px;
+  border-radius: 10px;
+}
+.note-container {
+  display: inline-block;
+}
+.sides-bar {
+  border-top: 1px solid white;
+  width: 4px;
+  height: 40px;
+  position: absolute;
+  background-color: #6f38c5;
+}

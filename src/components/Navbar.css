@@ -1,0 +1,19 @@
+.nav-div {
+  background-color: #31e1f7;
+}
+.navbar {
+  color: white;
+  text-decoration: none;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.nav {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar:hover {
+  color: #282c34;
+}
