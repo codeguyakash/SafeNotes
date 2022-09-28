@@ -11,10 +11,11 @@
   border-radius: 15px;
   z-index: 10;
   background-color: white;
-  width: 400px;
+  min-width: 400px;
   max-width: 60%;
   display: none;
   box-shadow: 0 2px 50px 5px rgba(73, 73, 73, 0.25);
+  transition-delay: 1s;
 }
 .activeModel {
   position: fixed;
@@ -75,21 +76,22 @@
   position: fixed;
 }
 
-.btndiv-hide{
+/* .btndiv-hide{
   margin: 10px 20px;
   display: none;
   align-self: center;
   justify-content: flex-end;
 
-}
+} */
 .btndiv{
   margin: 10px 20px;
   display: flex;
   align-self: center;
   justify-content: flex-end;
+  gap: 10px;
 
 }
-.closeBtn{
+.actionbtn{
   padding: 8px 20px;
   font-size: 15px;
   border-radius: 5px;
@@ -98,5 +100,45 @@
   color: white;
   background-color: #0096FF;
 }
+.delete{
+  background-color: red;
+}
+.update{
+  background-color: orange;
+}
 
+@media only screen and (max-width: 1023px){
+  .actionbtn{
+    padding: 6px 12px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #0096FF;
+  }
+  .delete{
+    background-color: red;
+  }
+  .update{
+    background-color: orange;
+  }
+}
+@media only screen and (max-width: 768px){
+  .actionbtn{
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #0096FF;
+  }
+  .delete{
+    background-color: red;
+  }
+  .update{
+    background-color: orange;
+  }
+}
 

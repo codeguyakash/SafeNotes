@@ -2,10 +2,12 @@
 import Navbar from "./Navbar";
 import "./Home.css";
 import Model from "./Model";
+import Alert from "./Alert";
 const Home = () => {
   return (
     <>
       <Navbar />
+      <Alert/>
       <Model/>
       <div className="home-container">
         <div className="items item1"><h1>Daily Notes</h1></div>

@@ -1,7 +1,8 @@
 .create-container {
   background-color: white;
   border-radius: 5px;
-  width: 50%;
+  min-width: 400px;
+  max-width: 50%;
   height: 500px;
   margin: 50px auto;
   padding: 50px 0px;
@@ -14,7 +15,8 @@
 .title-inputfield {
   font-size: 15px;
   padding: 10px 10px;
-  min-width: 320px;
+  min-width: 310px;
+  max-width: 400px;
   border-radius: 5px;
   margin-bottom: 10px;
   font-weight: 600;
@@ -23,7 +25,7 @@
 .description-inputfield {
   font-size: 15px;
   font-weight: 600;
-  min-width: 320px;
+  min-width: 310px;
   min-height: 200px;
   padding: 10px;
   border-radius: 5px;

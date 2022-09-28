@@ -1,10 +1,11 @@
 import { useRef, useEffect, useState } from "react";
 import DashboardNav from "./DashboardNav";
 import axios from "axios";
-import { useParams } from "react-router-dom";
-import "./CreateNotes.css"
+import { useParams, useNavigate } from "react-router-dom";
+import "./CreateNotes.css";
 
 const Edit = () => {
+  const navigate = useNavigate();
   const [updateNote, setUpdateNote] = useState([]);
   const newtitleRef = useRef("");
   const newdescriptionRef = useRef("");
@@ -20,7 +21,7 @@ const Edit = () => {
         },
       })
       .then((res) => setUpdateNote(res.data.find((n) => n._id === id)));
-  }, [token,id]);
+  }, [token, id]);
 
   const UpdateNote = (e) => {
     e.preventDefault();
@@ -35,8 +36,11 @@ const Edit = () => {
           Authorization: "Bearer " + token,
         },
       })
-      .then((response) => alert(response.data));
-    e.target.reset();
+      .then((response) => {
+        if (response.status === 200) {
+          navigate("/dashboard");
+        }
+      });
   };
 
   return (
@@ -47,7 +51,7 @@ const Edit = () => {
           <h1 className="create-form-heading ">Update Note</h1>
           <div className="title-div">
             <input
-            className="title-inputfield"
+              className="title-inputfield"
               type="text"
               ref={newtitleRef}
               placeholder="Title"

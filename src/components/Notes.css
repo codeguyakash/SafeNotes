@@ -69,28 +69,20 @@
   border-width: 0;
   background-color:  #6F38C5;
 } */
-.crud-icons-div {
-  margin: 10px 0px;
-  display: flex;
-  /* visibility:hidden; */
-  float:start;
-}
+
 /* .crud-icons-div:hover {
   margin: 10px 0px;
   display: flex;
   float:start;
 } */
-.crud-icons {
-  cursor: pointer;
-  width: 20px;
-  margin-right:10px;
-}
+
 .more-content{
   color:#0a93a5;
+  font-weight: bold;
   cursor: pointer;
 }
 .more-content-hide{
   color:#0a93a5;
-  cursor: pointer;
-  /* display: none; */
+  /* cursor: pointer; */
+  display: none;
 }

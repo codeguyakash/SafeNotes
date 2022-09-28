@@ -20,11 +20,13 @@ const Signin = () => {
         "http://localhost:5000/users/signin",
         data
       );
+     
 
       if (response.status === 200) {
         // console.log(response);
         localStorage.setItem("token", response.data.token);
         navigate("/dashboard");
+        console.log(response)
         localStorage.setItem("username", response.data.user.username);
       }
     } catch (error) {
