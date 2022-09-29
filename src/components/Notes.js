@@ -3,13 +3,11 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Model from "./Model";
-import Alert from "./Alert";
 
 const Notes = ({ item }) => {
   const [desc, setDesc] = useState("");
   const [moreBtn, setMoreBtn] = useState(true);
   const [open, setOpen] = useState(false);
-  const [alert, setAlert] = useState(false);
   const [overlay, setOverlay] = useState(false);
 
   const navigate = useNavigate();
@@ -23,7 +21,7 @@ const Notes = ({ item }) => {
   const description = item.description;
 
   useEffect(() => {
-    if (description.length >= 168) {
+    if (description.length >= 165) {
       setDesc(description.slice(0, 165));
     } else {
       setDesc(description);
@@ -37,9 +35,7 @@ const Notes = ({ item }) => {
   };
   const CloseModel = () => {
     setOpen(false);
-    setOverlay(false);
-    setAlert(false);
-   
+    setOverlay(false);   
   };
   const EditNote = () => {
     navigate(`/edit/${item._id}`);
@@ -56,7 +52,7 @@ const Notes = ({ item }) => {
         if (res.status === 202) {
           setOpen(false);
           setOverlay(false);
-          // setAlert(true);
+
         }
       });
   };
@@ -77,7 +73,6 @@ const Notes = ({ item }) => {
           </p>
         </div>
       </div>
-      <Alert  AlertClose={CloseModel} alertopen={alert} />
       <Model
         open={open}
         CloseHandler={CloseModel}

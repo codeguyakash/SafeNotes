@@ -1,24 +1,32 @@
-import Alert from "./Alert";
 import "./Model.css";
 const Model = (props) => {
   return (
     <>
-    <Alert/>
       <div className={props.open ? "activeModel" : "model"}>
         <div className="model-header">
           <div className="title">{props.title}</div>
-          <button className="close-button" onClick={props.CloseHandler}>
+          <button
+            className={props.hide ? "hide" : "close-button"}
+            onClick={props.CloseHandler}
+          >
             &times;
           </button>
         </div>
-        <hr className="model-hr" />
-        <div className="model-body">{props.para}</div>
-        <hr className="model-hr" />
+        <hr className={props.hide ? "hide" : "model-hr"} />
+        <div className={props.hide ? "hide":"model-body"}>{props.para}</div>
+        <h3 className={props.hide ? "popup-msg" : "hide"}>{props.popup}</h3>
+        <hr className={props.hide ? "hide" : "model-hr"} />
         <div className="btndiv">
-          <button className="actionbtn update" onClick={props.EditHandler}>
+          <button
+            className={props.hide ? "hide" : "actionbtn update"}
+            onClick={props.EditHandler}
+          >
             Update
           </button>
-          <button className="actionbtn delete" onClick={props.DeleteHandler}>
+          <button
+            className={props.hide ? "hide" : "actionbtn delete"}
+            onClick={props.DeleteHandler}
+          >
             Delete
           </button>
           <button className="actionbtn" onClick={props.CloseHandler}>

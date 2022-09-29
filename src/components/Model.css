@@ -15,7 +15,6 @@
   max-width: 60%;
   display: none;
   box-shadow: 0 2px 50px 5px rgba(73, 73, 73, 0.25);
-  transition-delay: 1s;
 }
 .activeModel {
   position: fixed;
@@ -27,6 +26,7 @@
   background-color: white;
   width: 600px;
   max-width: 60%;
+
 }
 .model-header {
   display: flex;
@@ -56,10 +56,21 @@
   background-color:  rgb(192, 192, 192);
 }
 
+.hide{
+  display: none;
+}
+
 .model-body {
   padding: 10px 20px 20px 20px; 
   text-align: justify;
 }
+.popup-msg{
+  text-align: start;
+  margin-left:20px ;
+}
+
+
+
 #overlay {
   position: fixed;
   opacity: 0;

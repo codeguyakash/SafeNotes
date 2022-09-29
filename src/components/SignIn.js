@@ -1,13 +1,23 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "../components/Sign.css";
 import axios from "axios";
 import Navbar from "./Navbar";
+import Model from "./Model";
 
 const Signin = () => {
   const navigate = useNavigate();
   const emailRef = useRef("");
   const passwordRef = useRef("");
+  const [open, setOpen] = useState(false);
+  const [overlay, setOverlay] = useState(false);
+  const [hide, setHide] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const CloseModel = () => {
+    setOpen(false);
+    setOverlay(false);
+  };
 
   const onSignIN = async (e) => {
     e.preventDefault();
@@ -20,19 +30,28 @@ const Signin = () => {
         "http://localhost:5000/users/signin",
         data
       );
-     
-
       if (response.status === 200) {
-        // console.log(response);
         localStorage.setItem("token", response.data.token);
         navigate("/dashboard");
-        console.log(response)
         localStorage.setItem("username", response.data.user.username);
       }
     } catch (error) {
-      alert(error.response.data.message);
+      if (error.response.status === 404) {
+        setErrorMessage(error.response.data.message);
+        // navigate("/signup");
+        setOpen(true);
+        setOverlay(true);
+        setHide(true);
+      } else if (error.response.status === 401) {
+        setErrorMessage(error.response.data.message);
+        setOpen(true);
+        setOverlay(true);
+        setHide(true);
+
+      }
     }
   };
+
   return (
     <>
       <Navbar />
@@ -89,6 +108,13 @@ const Signin = () => {
           <div className="sub-child-right"></div>
         </div>
       </div>
+      <Model
+        hide={hide}
+        open={open}
+        CloseHandler={CloseModel}
+        over={overlay}
+        para={errorMessage}
+      />
       {/* <Footer/> */}
     </>
   );

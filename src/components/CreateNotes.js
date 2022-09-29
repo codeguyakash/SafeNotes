@@ -1,12 +1,26 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import DashboardNav from "./DashboardNav";
-import "./CreateNotes.css"
+import "./CreateNotes.css";
+import Model from "./Model";
 
 const CreateNotes = () => {
+  const navigate = useNavigate();
   const titleRef = useRef("");
   const descriptionRef = useRef("");
   const token = localStorage.getItem("token");
+  const [open, setOpen] = useState(false);
+  const [overlay, setOverlay] = useState(false);
+  const [hide, setHide] = useState(false);
+  const [message, setMessage] = useState("");
+
+
+  const CloseModel = () => {
+    setOpen(false);
+    setOverlay(false);
+    navigate(-1);
+  };
 
   const CreateNote = (e) => {
     e.preventDefault();
@@ -21,9 +35,14 @@ const CreateNotes = () => {
           Authorization: "Bearer " + token,
         },
       })
-      .then((response) => alert(`Note Created ID is ${response.data._id}`));
-      e.target.reset();
-    
+      .then((response) => {
+        setMessage(`Note ${response.statusText} Successfully`);
+        console.log(response);
+        setOpen(true);
+        setOverlay(true);
+        setHide(true)
+      });
+    e.target.reset();
   };
   return (
     <>
@@ -32,7 +51,8 @@ const CreateNotes = () => {
         <form onSubmit={CreateNote}>
           <h2 className="create-form-heading">Create Note</h2>
           <div className="">
-            <input className="title-inputfield"
+            <input
+              className="title-inputfield"
               type="text"
               ref={titleRef}
               placeholder="Title"
@@ -55,6 +75,13 @@ const CreateNotes = () => {
           </div>
         </form>
       </div>
+      <Model
+        hide={hide}
+        open={open}
+        CloseHandler={CloseModel}
+        over={overlay}
+        popup={message}
+      />
     </>
   );
 };

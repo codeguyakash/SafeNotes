@@ -3,6 +3,7 @@ import DashboardNav from "./DashboardNav";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import "./CreateNotes.css";
+import Model from "./Model";
 
 const Edit = () => {
   const navigate = useNavigate();
@@ -10,6 +11,16 @@ const Edit = () => {
   const newtitleRef = useRef("");
   const newdescriptionRef = useRef("");
   const token = localStorage.getItem("token");
+  const [open, setOpen] = useState(false);
+  const [overlay, setOverlay] = useState(false);
+  const [hide, setHide] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const CloseModel = () => {
+    setOpen(false);
+    setOverlay(false);
+    navigate(-1);
+  };
 
   let { id } = useParams();
 
@@ -38,7 +49,10 @@ const Edit = () => {
       })
       .then((response) => {
         if (response.status === 200) {
-          navigate("/dashboard");
+          setOpen(true);
+          setOverlay(true);
+          setHide(true)
+          setMessage("Your Note Update Sucessfully");
         }
       });
   };
@@ -76,6 +90,13 @@ const Edit = () => {
           </div>
         </form>
       </div>
+      <Model
+       hide={hide}
+       open={open}
+       CloseHandler={CloseModel}
+       over={overlay}
+       popup={message}
+      />
     </>
   );
 };

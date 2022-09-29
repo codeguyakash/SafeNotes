@@ -59,6 +59,7 @@
 }
 .note-description {
   color: #282c34;
+  overflow:hidden;
   margin: 5px 0px;
   text-align: justify;
 }
