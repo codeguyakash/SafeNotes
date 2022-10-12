@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
 .notes-card {
-  background-color: white;
+  background-color: #1f1f1f;
   margin: 10px;
   width: 280px;
   min-height: 15rem;
@@ -8,25 +8,23 @@
   border-radius: 5px;
   color: #282c34;
   display: inline-block;
-  box-shadow: 0 2px 50px 5px rgba(73, 73, 73, 0.25);
+  box-shadow: 0 0px 5px 2px rgba(102, 102, 102, 0.25);
 }
-/* .notes-card:hover{
-  scale: 101%;
-} */
 .note-title-div {
-  font-size: 20px;
   border-radius: 5px;
-  color: #282c34;
   display: flex;
   align-items: center;
 }
 .note-title{
+  font-size: 20px;
+  color: rgb(167, 167, 167);
   text-align: justify;
   width: 350px;
 }
 .date{
   text-align: start;
-  font-size: 22px;
+  font-size: 18px;
+  font-weight: 600;
   color: gray;
   margin: 10px 0px 0px 0px ; 
 }
@@ -57,7 +55,7 @@
   justify-content: flex-end
 }
 .note-description {
-  color: #282c34;
+  color: rgb(167, 167, 167);
   overflow:hidden;
   margin: 5px 0px;
   text-align: justify;

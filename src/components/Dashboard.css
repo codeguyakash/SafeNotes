@@ -3,12 +3,12 @@
   padding: 10px;
 }
 .add-notes{
-  background-color: white;
+  background-color: #1f1f1f;
   margin: 10px;
   width: 280px;
   min-height: 15rem;
   border-radius: 5px;
-  color: #282c34;
+  color: rgb(167, 167, 167);
   display: inline-block;
   position: absolute;
 }
@@ -27,7 +27,11 @@
   width:100px;
   height:100px;
   border-radius: 50px;
-  border: 1px dashed;
+  border: 2px dashed;
+  cursor: pointer;
+}
+.cir:hover{
+color:#31e1f7;
 }
 .plus{
   font-size: 65px;

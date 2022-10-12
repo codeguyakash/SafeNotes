@@ -9,9 +9,7 @@ const DashboardNav = () => {
     localStorage.removeItem("username");
     navigate("/");
   };
-  const CreateNotes = () => {
-    navigate("/createnote");
-  };
+ 
 
   return (
     <>
@@ -20,7 +18,6 @@ const DashboardNav = () => {
           <Link className="navbar" to="/dashboard">
             Dashboard
           </Link>
-          <button className="nav-button" onClick={CreateNotes}>Create Notes</button>
           <button className="nav-button" onClick={SignOut}>Log Out</button>
         </nav>
       </div>
