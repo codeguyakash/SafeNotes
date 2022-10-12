@@ -17,17 +17,16 @@ const Notes = ({ item }) => {
     month: "short",
   });
   const year = new Date(item.createdAt).getFullYear();
-
   const description = item.description;
 
   useEffect(() => {
-    if (description.length >= 165) {
-      setDesc(description.slice(0, 165));
+    if (description.length >= 255) {
+      setDesc(description.slice(0, 225));
     } else {
       setDesc(description);
       setMoreBtn(false);
     }
-  },[description]);
+  }, [description]);
 
   const OpenModel = () => {
     setOpen(true);
@@ -35,7 +34,7 @@ const Notes = ({ item }) => {
   };
   const CloseModel = () => {
     setOpen(false);
-    setOverlay(false);   
+    setOverlay(false);
   };
   const EditNote = () => {
     navigate(`/edit/${item._id}`);
@@ -52,12 +51,13 @@ const Notes = ({ item }) => {
         if (res.status === 202) {
           setOpen(false);
           setOverlay(false);
-
+          console.log(res);
         }
       });
   };
   return (
     <>
+      
       <div className="notes-card" onClick={OpenModel}>
         <div className="date">{`${day}-${month}-${year}`}</div>
         <div className="note-title-div">

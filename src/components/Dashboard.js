@@ -22,6 +22,12 @@ const Dashboard = () => {
     <>
       <DashboardNav />
       <div className="note-container">
+        <div className="add-notes">
+          <div className="cir">
+            <div className="plus">+</div>
+          </div>
+          <h3 className="add">Add New</h3>
+        </div>
         {notes.map((note) => (
           <Notes item={note} key={note._id} />
         ))}

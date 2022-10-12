@@ -2,8 +2,8 @@
 .notes-card {
   background-color: white;
   margin: 10px;
-  width: 350px;
-  min-height: 11rem;
+  width: 280px;
+  min-height: 15rem;
   padding: 0px 10px;
   border-radius: 5px;
   color: #282c34;
@@ -29,7 +29,6 @@
   font-size: 22px;
   color: gray;
   margin: 10px 0px 0px 0px ; 
-  font-family: 'Teko', sans-serif;
 }
 .dot{
   background-color: #31e1f7;

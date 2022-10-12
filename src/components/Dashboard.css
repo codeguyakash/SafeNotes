@@ -1,10 +1,34 @@
 .note-container {
   display: inline-block;
+  padding: 10px;
 }
-.sides-bar {
-  border-top: 1px solid white;
-  width: 4px;
-  height: 40px;
+.add-notes{
+  background-color: white;
+  margin: 10px;
+  width: 280px;
+  min-height: 15rem;
+  border-radius: 5px;
+  color: #282c34;
+  display: inline-block;
   position: absolute;
-  background-color: #6f38c5;
+}
+.addN{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.add{
+  font-size: 25px;
+}
+
+.cir{
+  margin: 50px auto 10px;
+  width:100px;
+  height:100px;
+  border-radius: 50px;
+  border: 1px dashed;
+}
+.plus{
+  font-size: 65px;
 }

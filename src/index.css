@@ -3,14 +3,15 @@
   margin: 0px;
   padding: 0px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: "Menlo", "Meslo LG", monospace; */
   box-sizing: border-box;
   text-align: center;  
 }
-body {
+/* body {
   background-image: url("https://images.pexels.com/photos/10526919/pexels-photo-10526919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 
 ::-webkit-scrollbar {
   width: 1px;
